@@ -26,7 +26,7 @@ export const jwtCheck = auth({
   tokenSigningAlg
 });
 
-export const jwtParse = async (req:Request,res:Response,next:NextFunction) => {
+export const jwtParse = async (req: Request, res: Response, next: NextFunction) => {
   const { authorization } = req.headers;
   if (!authorization || !authorization.startsWith("Bearer ")) return res.status(401);
   const token = authorization.split(" ")[1]; //get the token from the autorization headers
